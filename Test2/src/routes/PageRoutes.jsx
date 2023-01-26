@@ -8,7 +8,7 @@ const PageRoutes = () => {
     <Routes>
       <Route element={<BaseLayout />}>
         <Route index element={<Dashboard />} />
-        <Route path='/' element={<Dashboard />} />
+        <Route path='/' element={<Dashboard />}></Route>
       </Route>
     </Routes>
   );

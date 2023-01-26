@@ -1,8 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {Outlet} from "react-router";
-import {NavBar, OverView, SideBar, TopBar} from "../components";
-import {Greeting} from "../components/global-comps";
+import {CommonSection, NavBar, OverView, SideBar, TopBar} from "../components";
 
 const BaseLayout = () => {
   const showSideBar = useSelector((state) => state.general.showSideBar);
@@ -18,7 +17,12 @@ const BaseLayout = () => {
       {/*NAVBAR FOR SMALL SCREENS */}
       {showSideBar ? <NavBar /> : null}
 
+      {/*DISPLAYS COUNT OF ALL NOTES*/}
       <OverView />
+
+      {/* CONTAINS THE URL_PARAMS AND ADDBUTTON */}
+      <CommonSection />
+
       <Outlet />
     </div>
   );
