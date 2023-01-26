@@ -5,7 +5,7 @@ export const NotesContent = [
     content:
       "Notes Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor sit amet consectetur adipisicing elit.",
     createdAt: "May 11th, 2022",
-    labels: [{title: "User", color: "red"}],
+    labels: [{title: "Completed", color: "green"}],
     theme: "red",
   },
   {
@@ -14,7 +14,25 @@ export const NotesContent = [
     content:
       "Notes Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius libero sit amet consectetur adipisicing elit",
     createdAt: "September 16th, 2022",
-    labels: [{title: "Onboarding", color: "blue"}],
+    labels: [{title: "Completed", color: "green"}],
+    theme: "blue",
+  },
+  {
+    id: 3,
+    title: "Where two or three are gathered",
+    content:
+      "Notes Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor sit amet consectetur adipisicing elit.",
+    createdAt: "May 11th, 2023",
+    labels: [{title: "Ongoing", color: "blue"}],
+    theme: "red",
+  },
+  {
+    id: 4,
+    title: "The career worth doing",
+    content:
+      "Notes Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius libero sit amet consectetur adipisicing elit",
+    createdAt: "September 16th, 2022",
+    labels: [{title: "Ongoing", color: "blue"}],
     theme: "blue",
   },
 ];
@@ -27,22 +45,4 @@ export const Weekdays = [
   "Thursday",
   "Friday",
   "Saturday",
-];
-
-export const NavItems = [
-  {
-    id: 1,
-    title: "PRODUCT",
-    icon: "",
-  },
-  {
-    id: 2,
-    title: "WHO WE SERVE",
-    icon: "",
-  },
-  {
-    id: 3,
-    title: "PRICING",
-    icon: "",
-  },
 ];

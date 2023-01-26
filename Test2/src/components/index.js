@@ -1,3 +1,3 @@
-export {default as SideBar} from "./SideBar";
-export {default as TopBar} from "./TopBar";
-export {default as Button} from "./Button";
+export {SideBar, NavBar, TopBar} from "./global-comps";
+
+export {Button, OverView} from "./activity-comps";

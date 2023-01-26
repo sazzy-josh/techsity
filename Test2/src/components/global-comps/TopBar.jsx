@@ -1,27 +1,35 @@
 import React from "react";
+import {useDispatch} from "react-redux";
 import {Link} from "react-router-dom";
-import {NoteIcon} from "../assets";
-import {useDate} from "../hooks";
+import {NoteIcon} from "../../assets";
+import {useDate} from "../../hooks";
+import {toggleSideBar} from "../../redux/features/generalSlice/SliceReducer";
+import Greeting from "./Greeting";
 
 const TopBar = () => {
   const day = useDate();
+  const dispatch = useDispatch();
 
   return (
     <div className='ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%] p-2'>
       <div className='sticky z-10 top-0 h-16 lg:border-b bg-white lg:py-2.5'>
         <div className='px-6 flex items-center justify-between space-x-4 2xl:container'>
-          <h5 hidden className='text-2xl text-gray-600 font-medium lg:block'>
+          {/* <h5 hidden className='text-2xl text-gray-600 font-medium lg:block'>
             Hey, 👋🏼 It's {day}
-          </h5>
+          </h5> */}
+          <Greeting text_size='xl' display='true' />
 
           <Link to='/'>
-            <div className='w-12 h-12 flex justify-center items-center gap-x-1 lg:hidden'>
+            <div className='w-12 h-12  flex justify-center items-center gap-x-1 lg:hidden'>
               <img src={NoteIcon}></img>
               <h6 className='text-slate-600 font-semibold text-lg'>Nothy</h6>
             </div>
           </Link>
 
-          <div className='w-12 h-16 flex items-center justify-center lg:hidden -mr-10'>
+          <div
+            className='w-12 h-16 flex items-center justify-center lg:hidden -mr-10'
+            onClick={() => dispatch(toggleSideBar())}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
               class='h-8 w-8 -mr-10'

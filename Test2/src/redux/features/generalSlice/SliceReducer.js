@@ -10,6 +10,7 @@ const generalSlice = createSlice({
   reducers: {
     toggleSideBar: (state) => {
       state.showSideBar = !state.showSideBar;
+      console.log(state.showSideBar);
     },
   },
 });

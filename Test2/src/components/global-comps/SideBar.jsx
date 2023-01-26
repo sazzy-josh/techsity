@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {NoteIcon} from "../assets";
+import {NoteIcon} from "../../assets";
 
 const SideBar = () => {
   return (
@@ -8,8 +8,9 @@ const SideBar = () => {
       <div>
         <div class='-mx-6 px-6 py-4'>
           <Link to={"/"}>
-            <div className='w-10 h-10'>
+            <div className='w-10 h-10 flex items-center ml-8 justify-center gap-x-2'>
               <img src={NoteIcon} alt='note' />
+              <h6 className='text-slate-600 font-semibold text-lg'>Nothy</h6>
             </div>
           </Link>
         </div>
