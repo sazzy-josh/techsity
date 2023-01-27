@@ -44,12 +44,11 @@ const NoteSlice = createSlice({
 
     removeItem: (state, action) => {
       const id = action.payload;
-      //Find & grab item
-      const itemId = state.TaskDetails.find((item) => item.id == Number(id));
 
+      console.log(id);
       // Get the index of the item to remove
-      const itemIndex = state.TaskDetails.indexOf(itemId);
-      state.TaskDetails.splice(itemIndex, 1);
+      const newItems = state.TaskDetails.filter((item) => item.id !== id);
+      state.TaskDetails = newItems;
       localStorage.setItem("Task", JSON.stringify(state.TaskDetails));
     },
 
