@@ -1,14 +1,18 @@
 import React from "react";
 import {Routes, Route, Navigate} from "react-router-dom";
 import {BaseLayout} from "../layout";
-import {Dashboard} from "../Pages";
+import {AddNote, Dashboard, NoteDetails, UpdateNote} from "../Pages";
 
 const PageRoutes = () => {
   return (
     <Routes>
       <Route element={<BaseLayout />}>
         <Route index element={<Dashboard />} />
-        <Route path='/' element={<Dashboard />}></Route>
+        <Route path='/notes' element={<Dashboard />}>
+          <Route path='addnote' element={<AddNote />} />
+          <Route path='update/:id' element={<UpdateNote />} />
+          <Route path='note/:id' element={<NoteDetails />} />
+        </Route>
       </Route>
     </Routes>
   );
