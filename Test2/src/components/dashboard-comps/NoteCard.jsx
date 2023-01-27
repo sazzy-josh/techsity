@@ -11,17 +11,25 @@ const NoteCard = ({...task}) => {
     <div
       className={`w-40 h-56 md:w-52 md:h-44 flex flex-col items-center justify-between ${
         theme == "green"
-          ? "bg-green-200"
+          ? "bg-green-100"
           : theme == "red"
-          ? "bg-red-200"
-          : "bg-blue-200"
+          ? "bg-orange-100"
+          : "bg-blue-100"
       } rounded-2xl p-2`}
     >
       <div className='w-full flex flex-row justify-between'>
         <div className='hidden lg:block rounded-full p-1 bg-orange-300 text-xs font-semibold'>
           #NT-123
         </div>
-        <div className='rounded-full p-1 bg-green-300 text-xs font-semibold '>
+        <div
+          className={`rounded-full p-1 shadow-sm text-xs font-semibold ${
+            labels[0].title == "Ongoing"
+              ? "bg-blue-400 "
+              : labels[0].title == "Completed"
+              ? "bg-green-400"
+              : "bg-red-400"
+          }`}
+        >
           <p>{labels[0].title}</p>
         </div>
       </div>
