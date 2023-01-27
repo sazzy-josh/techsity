@@ -5,7 +5,7 @@ export const NotesContent = [
     content:
       "Notes Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor sit amet consectetur adipisicing elit.",
     createdAt: "May 11th, 2022",
-    labels: [{title: "Completed", color: "green"}],
+    labels: [{title: "Backlog", color: "red"}],
     theme: "red",
   },
   {
