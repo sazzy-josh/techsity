@@ -5,14 +5,13 @@ import {Greeting} from "../global-comps";
 import OverviewCard from "./OverviewCard";
 
 const Overview = () => {
+  const countDetails = useSelector((state) => state.notes);
+  const dispatch = useDispatch();
+  const {Ongoing, Backlogs, Completed, TaskDetails} = countDetails;
+
   useEffect(() => {
     dispatch(calculateTotal());
-  }, []);
-
-  const dispatch = useDispatch();
-  const countDetails = useSelector((state) => state.notes);
-
-  const {Ongoing, Backlogs, Completed} = countDetails;
+  }, [TaskDetails]);
 
   return (
     <div className='w-full justify-end items-center border-b'>

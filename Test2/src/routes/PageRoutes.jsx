@@ -1,5 +1,5 @@
 import React from "react";
-import {Routes, Route, Navigate} from "react-router-dom";
+import {Routes, Route} from "react-router-dom";
 import {BaseLayout} from "../layout";
 import {AddNote, Dashboard, NoteDetails, UpdateNote} from "../Pages";
 
@@ -11,7 +11,7 @@ const PageRoutes = () => {
         <Route path='/notes' element={<Dashboard />}>
           <Route path='addnote' element={<AddNote />} />
           <Route path='update/:id' element={<UpdateNote />} />
-          <Route path='note/:id' element={<NoteDetails />} />
+          <Route path=':id' element={<NoteDetails />} />
         </Route>
       </Route>
     </Routes>
