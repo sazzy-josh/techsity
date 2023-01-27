@@ -18,40 +18,38 @@ const NoteCard = ({...task}) => {
           : "bg-sky-100"
       } rounded-2xl p-2`}
     >
-      <Link to='/'>
-        <div className='w-full flex flex-row justify-between items-center'>
-          <div
-            className={`rounded-full p-1 shadow-sm text-xs font-semibold ${
-              labels == "Ongoing"
-                ? "bg-blue-400 "
-                : labels == "Completed"
-                ? "bg-green-400"
-                : "bg-red-400"
-            }`}
-          >
-            <p>{labels}</p>
-          </div>
-          <div
-            title='delete'
-            className='p-1 rounded-full cursor-pointer'
-            onClick={() => dispatch(removeItem(id))}
-          >
-            🚮
-          </div>
+      <div className='w-full flex flex-row justify-between items-center'>
+        <div
+          className={`rounded-full p-1 shadow-sm text-xs font-semibold ${
+            labels == "Ongoing"
+              ? "bg-blue-400 "
+              : labels == "Completed"
+              ? "bg-green-400"
+              : "bg-red-400"
+          }`}
+        >
+          <p>{labels}</p>
         </div>
-
-        <p className='text-md font-bold leading-none text-left w-full'>
-          {title}
-        </p>
-
-        <div className='w-full leading-none text-left text-sm'>
-          {content.length > 40 ? content.substring(0, 40) + "...." : content}
+        <div
+          title='delete'
+          className='p-1 rounded-full cursor-pointer'
+          onClick={() => dispatch(removeItem(id))}
+        >
+          🚮
         </div>
+      </div>
 
-        <div className='flex items-center justify-between w-full'>
-          <p className='text-xs font-semibold'>{createdAt}</p>
+      <p className='text-md font-bold leading-none text-left w-full'>{title}</p>
 
-          <div className='rounded-full w-8 h-8 flex items-center justify-center bg-slate-900 p-2 ml-auto cursor-pointer'>
+      <div className='w-full leading-none text-left text-sm'>
+        {content.length > 40 ? content.substring(0, 40) + "...." : content}
+      </div>
+
+      <div className='flex items-center justify-between w-full'>
+        <p className='text-xs font-semibold'>{createdAt}</p>
+
+        <div className='rounded-full w-8 h-8 flex items-center justify-center bg-slate-900 p-2 ml-auto cursor-pointer'>
+          <Link to={`notes/update/${id}`}>
             <svg
               fill='white'
               version='1.1'
@@ -72,9 +70,9 @@ const NoteCard = ({...task}) => {
                 />
               </g>
             </svg>
-          </div>
+          </Link>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
