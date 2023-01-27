@@ -1,31 +1,39 @@
 import React from "react";
 // import {EditIcon} from "../../assets";
 
-const NoteCard = () => {
+const NoteCard = ({...task}) => {
+  console.log(task);
+
+  const {id, title, content, createdAt, theme, labels} = task;
+  console.log(theme);
+
   return (
-    <div className='w-40 h-56 md:w-52 md:h-44 flex flex-col items-center justify-between bg-red-300 rounded-2xl p-2'>
+    <div
+      className={`w-40 h-56 md:w-52 md:h-44 flex flex-col items-center justify-between ${
+        theme == "green"
+          ? "bg-green-200"
+          : theme == "red"
+          ? "bg-red-200"
+          : "bg-blue-200"
+      } rounded-2xl p-2`}
+    >
       <div className='w-full flex flex-row justify-between'>
         <div className='hidden lg:block rounded-full p-1 bg-orange-300 text-xs font-semibold'>
           #NT-123
         </div>
-        <div className='rounded-full p-1 bg-green-300 text-xs font-semibold'>
-          <p>Ongoing</p>
+        <div className='rounded-full p-1 bg-green-300 text-xs font-semibold '>
+          <p>{labels[0].title}</p>
         </div>
       </div>
 
-      <p className='text-md font-bold leading-none'>
-        Get started with Typescript
-      </p>
+      <p className='text-md font-bold leading-none text-left w-full'>{title}</p>
 
       <div className='flex leading-none text-sm'>
-        {"Lorem  ipsum dolor sit amet consectetur adipisicing  ipsum dolor sit amet consectetur adipisicing ipsum dolor sit amet consectetur adipisicing elit. Ab, cupiditate lorem ko".substring(
-          0,
-          40,
-        ) + "...."}
+        {content.length > 40 ? content.substring(0, 40) + "...." : content}
       </div>
 
       <div className='flex items-center justify-between w-full'>
-        <p className='text-xs font-semibold'>12th Dec,2023</p>
+        <p className='text-xs font-semibold'>{createdAt}</p>
 
         <div className='rounded-full w-8 h-8 flex items-center justify-center bg-slate-900 p-2 ml-auto cursor-pointer'>
           <svg

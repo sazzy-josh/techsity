@@ -15,7 +15,7 @@ export const NotesContent = [
       "Notes Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eius libero sit amet consectetur adipisicing elit",
     createdAt: "September 16th, 2022",
     labels: [{title: "Completed", color: "green"}],
-    theme: "blue",
+    theme: "green",
   },
   {
     id: 3,
@@ -24,6 +24,15 @@ export const NotesContent = [
       "Notes Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor sit amet consectetur adipisicing elit.",
     createdAt: "May 11th, 2023",
     labels: [{title: "Ongoing", color: "blue"}],
+    theme: "red",
+  },
+  {
+    id: 5,
+    title: "Where two or three are gathered",
+    content:
+      "Notes Lorem ipsum dolor sit amet consectetur adipisicing elit ipsum dolor sit amet consectetur adipisicing elit.",
+    createdAt: "May 11th, 2023",
+    labels: [{title: "Backlog", color: "blue"}],
     theme: "red",
   },
   {

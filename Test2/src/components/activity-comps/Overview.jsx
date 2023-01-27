@@ -26,7 +26,7 @@ const Overview = () => {
             count={countDetails.TaskDetails.length}
           />
           <OverviewCard title='Ongoing' count={Ongoing} />
-          <OverviewCard title='Completed' count={Backlogs} />
+          <OverviewCard title='Completed' count={Completed} />
         </div>
       </div>
     </div>
