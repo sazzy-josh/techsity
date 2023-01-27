@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {NotesContent} from "../../../database/index.";
+// import {NotesContent} from "../../../database/index.";
 
 const task = localStorage.getItem("Task")
   ? JSON.parse(localStorage.getItem("Task"))
@@ -44,9 +44,8 @@ const NoteSlice = createSlice({
 
     removeItem: (state, action) => {
       const id = action.payload;
-
       //Find & grab item
-      const itemId = state.TaskDetails.find((item) => item.id === id);
+      const itemId = state.TaskDetails.find((item) => item.id == Number(id));
 
       // Get the index of the item to remove
       const itemIndex = state.TaskDetails.indexOf(itemId);
@@ -55,15 +54,25 @@ const NoteSlice = createSlice({
     },
 
     editNote: (state, action) => {
-      const itemId = action.payload;
+      let itemExist = action.payload;
 
-      const existingItem = state.TaskDetails.find(
-        (item) => item.id === itemId.id,
+      const itemEdit = state.TaskDetails.find(
+        (item) => item.id === itemExist.id,
       );
+
+      itemEdit.id = itemExist.id;
+      itemEdit.content = itemExist.content;
+      itemEdit.createdAt = itemExist.createdAt;
+      itemEdit.labels = itemExist.labels;
+      itemEdit.theme = itemExist.theme;
+      itemEdit.title = itemExist.title;
+
+      localStorage.setItem("Task", JSON.stringify(state.TaskDetails));
     },
   },
 });
 
-export const {calculateTotal, addNote, removeItem} = NoteSlice.actions;
+export const {calculateTotal, addNote, removeItem, editNote} =
+  NoteSlice.actions;
 
 export default NoteSlice.reducer;
